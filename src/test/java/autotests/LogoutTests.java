@@ -2,8 +2,10 @@ package autotests;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.junit.ScreenShooter;
 import io.qameta.allure.Step;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 import org.openqa.selenium.By;
 
@@ -11,6 +13,8 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class LogoutTests {
+    @Rule
+    public ScreenShooter makeScreenshotOnFailure = ScreenShooter.failedTests();
 
     @Before
     public void setup() {
@@ -32,7 +36,7 @@ public class LogoutTests {
 
     @Step
     public void logoutByURL(){
-        open("/index.php?mylogout=");
+        open("/index.   php?mylogout=");
     }
 
     @Step
